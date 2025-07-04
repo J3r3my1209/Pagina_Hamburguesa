@@ -450,99 +450,48 @@ footer{
 }
 /**/
 
-/* Estilos generales */
 .header__barra {
     display: flex;
     gap: 2rem;
-    justify-content: flex-end;
-    padding: 1rem;
-    align-items: center;
 }
-
+.header__barra {
+    display: flex;
+    gap: 2rem;
+}
 .header__hamburger {
     display: none;
     cursor: pointer;
-    font-size: 2rem;
-    color: #333;
-    transition: color 0.3s ease;
+    font-size: 1.8rem;
 }
-
-.header__hamburger:hover {
-    color: #ff7f50; /* Un color más llamativo para hover */
-}
-
-/* Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
     .header__barra {
-        position: absolute;
-        top: 70px;
+        position: fixed; 
+        top: 0;
         left: 0;
-        right: 0;
+        width: 100%;
+        height: 100vh; 
         background: #fff;
         flex-direction: column;
         align-items: center;
-        padding: 2rem 1rem;
-        transform: translateY(-200%);
-        transition: transform 0.4s ease-in-out, background-color 0.3s ease;
-        z-index: 10;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-        border-radius: 8px 8px 0 0; /* Bordes redondeados en la parte superior */
+        justify-content: center;
+        padding: 2rem;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 999;
     }
 
     .header__barra.active {
         transform: translateY(0);
     }
 
-    /* Mostrar el ícono del hamburger */
     .header__hamburger {
         display: block;
-        color: #333;
-        font-size: 2rem;
+        z-index: 1000; 
     }
 
-    /* Estilo para los iconos dentro de la barra */
-    .header__barra ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
+    .navegacion,
+    .buttons {
         flex-direction: column;
         gap: 1.5rem;
     }
-
-    .header__barra ul li {
-        text-align: center;
-    }
-
-    .header__barra ul li a {
-        text-decoration: none;
-        color: #333;
-        font-size: 1.6rem;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem; /* Espacio entre el icono y el texto */
-        transition: color 0.3s ease, transform 0.3s ease;
-    }
-
-    .header__barra ul li a:hover {
-        color: #ff7f50;
-        transform: scale(1.1);
-    }
-
-    /* Estilo para los iconos dentro de los enlaces */
-    .header__barra ul li a i {
-        font-size: 1.8rem; /* Tamaño de los iconos */
-        transition: transform 0.3s ease;
-    }
-
-    .header__barra ul li a:hover i {
-        transform: scale(1.1); /* Aumentar el tamaño del icono en hover */
-    }
-}
-
-/* Estilos para cuando la barra está activa */
-.header__barra.active {
-    transform: translateY(0);
 }
